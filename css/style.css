@@ -67,6 +67,7 @@ body {
 
 /* Нижняя рамка у хедера */
 .page-header {
+  height: 80px;
   border-bottom: 1px solid #ececec;
 }
 
@@ -99,6 +100,7 @@ body {
 /* Флекс на навигацию и список навигации */
 .nav,
 .nav-list {
+  position: relative;
   display: flex;
 }
 
@@ -120,6 +122,8 @@ body {
 
 /* Ссылки навигации по страницам сайта */
 .nav-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
   padding: 32px 0;
 
@@ -136,12 +140,26 @@ body {
 }
 
 /* Подсвечивание текущей страницы */
-.current {
+.current-studio {
   color: var(--accent-color);
+}
+
+.current-studio::after {
+  position: absolute;
+  top: 76px;
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 /* Главная почта и телефон */
 .contacts-main {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   padding: 32px 0;
   align-items: center;
@@ -152,19 +170,18 @@ body {
   color: var(--text-color);
 }
 
-/* Стили к иконкам телефона и почты */
-.icon-phone,
-.icon-mail {
-  display: block;
-  margin-right: 10px;
-
-  fill: currentColor;
-}
-
 /* Эффект выделения цветом при ховере и фокусе */
 .contacts-main:hover,
 .contacts-main:focus {
   color: var(--accent-color);
+}
+
+/* Стили к иконкам телефона и почты */
+.contacts-icon {
+  display: block;
+  margin-right: 10px;
+
+  fill: currentColor;
 }
 
 /* ||||||||||||||||||||| С Е К Ц И Я   Г Е Р О Й ||||||||||||||||||||| */
@@ -202,6 +219,8 @@ body {
 
 /* Кнопка заказа услуги */
 .hero-button {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   padding: 10px 32px;
   min-width: 200px;
   min-height: 50px;
@@ -294,6 +313,26 @@ body {
   margin-left: 30px;
 }
 
+.work-thumb {
+  position: relative;
+}
+
+.work-thumb-text {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 27px 0;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
 /* ||||||||||||||||||||| С Е К Ц И Я   Н А Ш А   К О М А Н Д А ||||||||||||||||||||| */
 
 /* Фон секции с командой */
@@ -363,6 +402,9 @@ body {
 
 /* Блоки в списке соц сетей */
 .social-networks-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 100%;
   height: 100%;
@@ -394,10 +436,18 @@ body {
 
 /* Блоки в списке клиентов */
 .clients-item {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   flex-basis: calc((100% - 150px) / 6);
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+}
+
+/* Эффект выделения цветом при ховере и фокусе */
+.clients-item:hover,
+.clients-item:focus {
+  border-color: var(--accent-color);
 }
 
 /* Отступы (margin) в списке клиентов кроме последнего */
@@ -407,6 +457,8 @@ body {
 
 /* Флекс на ссылки клиентов */
 .clients-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 100%;
   height: 100%;
@@ -416,21 +468,15 @@ body {
   color: #afb1b8;
 }
 
-/* Наследование цвета иконками */
-.clients-icon {
-  fill: currentColor;
-}
-
-/* Эффект выделения цветом при ховере и фокусе */
-.clients-item:hover,
-.clients-item:focus {
-  border-color: var(--accent-color);
-}
-
 /* Эффект выделения цветом при ховере и фокусе */
 .clients-link:hover,
 .clients-link:focus {
   color: var(--accent-color);
+}
+
+/* Наследование цвета иконками */
+.clients-icon {
+  fill: currentColor;
 }
 
 /* |||||||||||||||||||||   Ф У Т Е Р   С Т Р А Н И Ц Ы   ||||||||||||||||||||| */
@@ -465,6 +511,8 @@ body {
 
 /* Физический адрес студии */
 .contacts-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   line-height: 1.71;
   color: #ffffff;
 }
@@ -477,6 +525,8 @@ body {
 
 /* Дополнительная почта и телефон */
 .contacts-secondary {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: inline-block;
 
   line-height: 1.71;
@@ -517,6 +567,8 @@ body {
 
 /* Стили к ссылке */
 .connect-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 100%;
   height: 100%;
@@ -553,6 +605,21 @@ body {
 
 /*|||||||||||||||||||||||| С Т Р А Н И Ц А   П О Р Т Ф О Л И О ||||||||||||||||||||||||*/
 
+.current-portfolio {
+  color: var(--accent-color);
+}
+
+.current-portfolio::after {
+  position: absolute;
+  top: 76px;
+  content: "";
+  width: 78px;
+  height: 4px;
+  display: block;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 /* Флекс на список кнопок фильтра */
 .filter-list {
   display: flex;
@@ -567,6 +634,10 @@ body {
 
 /* Стили к кнопкам фильтра */
 .filter-button {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   padding: 6px 22px;
 
   font-weight: 500;
@@ -578,6 +649,15 @@ body {
   cursor: pointer;
   border-style: none;
   border-radius: 4px;
+}
+
+/* Эффект выделения цветом при ховере и фокусе */
+.filter-button:hover,
+.filter-button:focus {
+  color: #ffffff;
+  background-color: #2196f3;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 
+  0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Флекс на список проектов */
@@ -595,12 +675,36 @@ body {
   margin-top: 30px;
 }
 
+/* Задание ссылке типа block */
+.projects-link {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: block;
+}
+
+.projects-thumb {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.projects-thumb-text {
+  position: absolute;
+  top: 294px;
+  
+  width: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
 /* Эффект выделения тенью при ховере и фокусе */
 .projects-link:hover,
 .projects-link:focus {
-  display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 
   1px 4px 6px rgba(0, 0, 0, 0.16);
+  
 }
 
 /* Отступы под карточкой проекта */
@@ -611,15 +715,6 @@ body {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   background-color: white;
-}
-
-/* Эффект выделения цветом при ховере и фокусе */
-.filter-button:hover,
-.filter-button:focus {
-  color: #ffffff;
-  background-color: #2196f3;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 
-  0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Названия проектов */
