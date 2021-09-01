@@ -68,7 +68,7 @@
           Эффективные решения<br />
           для вашего бизнеса
         </h1>
-        <button class="hero-button" type="button">Заказать услугу</button>
+        <button class="hero-button" data-modal-open type="button">Заказать услугу</button>
       </section>
       <!-- Секция со списком особенностей (преимуществ) -->
       <section class="section">
@@ -138,7 +138,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="work-thumb-text">Десктопные приложения</p>
+                <h3 class="work-thumb-text">Десктопные приложения</h3>
               </div>
             </li>
             <li class="work-item">
@@ -149,7 +149,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="work-thumb-text">Мобильные приложения</p>
+                <h3 class="work-thumb-text">Мобильные приложения</h3>
               </div>
             </li>
             <li class="work-item">
@@ -160,7 +160,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="work-thumb-text">Дизайнерские решения</p>
+                <h3 class="work-thumb-text">Дизайнерские решения</h3>
               </div>
             </li>
           </ul>
@@ -567,5 +567,12 @@
         </div>
       </div>
     </footer>
+    <!-- Modal window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close" data-modal-close>close</button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
