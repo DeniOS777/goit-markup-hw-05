@@ -65,6 +65,19 @@ body {
   clip: rect(0 0 0 0);
 }
 
+/* Анимация */
+@keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* ||||||||||||||||||||||||||||||||| Х Е Д Е Р ||||||||||||||||||||||||||||||| */
 
 /* Нижняя рамка у хедера */
@@ -87,6 +100,8 @@ body {
   margin-right: 93px;
   padding-top: 24px;
   padding-bottom: 25px;
+
+  animation: puls 3000ms infinite;
 }
 
 /* Выделение цветом части логотипа */
@@ -789,7 +804,7 @@ body {
   transition: transform var(--tr-duration) var(--tr-function),
     opacity var(--tr-duration) var(--tr-function), visibility var(--tr-duration) var(--tr-function);
   min-width: 528px;
-  min-height: 420px;
+  min-height: 581px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -813,7 +828,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: unset;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
