@@ -117,8 +117,12 @@ body {
 /* Флекс на навигацию и список навигации */
 .nav,
 .nav-list {
-  position: relative;
   display: flex;
+}
+
+/* Задание позиционирования относительно li для подчеркивания в хедере */
+.nav-item {
+  position: relative;
 }
 
 /* Горизонтальные отступы в ссылках навигации */
@@ -157,17 +161,17 @@ body {
 }
 
 /* Подсвечивание текущей страницы */
-.current-studio {
+.current {
   color: var(--accent-color);
 }
 
 /* Подчеркивание текущей страницы */
-.current-studio::after {
+.current::after {
   position: absolute;
   top: 76px;
   content: '';
   display: block;
-  width: 48px;
+  width: 100%;
   height: 4px;
 
   background-color: var(--accent-color);
@@ -627,17 +631,17 @@ body {
 /*|||||||||||||||||||||||| С Т Р А Н И Ц А   П О Р Т Ф О Л И О ||||||||||||||||||||||||*/
 
 /* Подсвечивание текущей страницы цветом */
-.current-portfolio {
+.current {
   color: var(--accent-color);
 }
 
 /* Подчеркивание текущей страницы элементом афтер */
-.current-portfolio::after {
+.current::after {
   position: absolute;
   top: 76px;
 
   content: '';
-  width: 78px;
+  width: 100%;
   height: 4px;
   display: block;
 
